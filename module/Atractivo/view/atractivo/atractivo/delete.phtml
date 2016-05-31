@@ -1,0 +1,29 @@
+<?php
+// module/Atractivo/view/atractivo/atractivo/delete.phtml:
+
+$title = 'Delete atractivo';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p>Are you sure that you want to delete
+'<?php echo $this->escapeHtml($atractivo->nombre_at); ?>' by
+'<?php echo $this->escapeHtml($atractivo->descripcion); ?>'?
+'<?php echo $this->escapeHtml($atractivo->fotos); ?>' by
+'<?php echo $this->escapeHtml($atractivo->coordenadas); ?>'?
+'<?php echo $this->escapeHtml($atractivo->direc_foto); ?>' by
+
+</p>
+<?php
+$url = $this->url('atractivo', array(
+	'action' => 'delete',
+	'id' => $this->cod_at,
+));
+?>
+<form action="<?php echo $url; ?>" method="post">
+<div>
+<input type="hidden" name="cod_at" value="<?php echo (int) $atractivo->cod_at; ?>" />
+<input type="submit" name="del" value="Yes" />
+<input type="submit" name="del" value="No" />
+</div>
+</form>

@@ -1,0 +1,25 @@
+<div class="row bg-22 centrar cajota">
+	<div class="medium-12 columns">
+		<strong>NOMBRE DEL ATRACTIVO</strong>
+	</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns">
+		<h5 class="subheader">En el municipio de <a class="cajita" href="#">Toro Toro</a> del Departamento de <a class="cajita" href="#">Cochabamba</a></h5>
+		<h2><?php echo $atractivos->nombre_at ?><small><a href="<?php echo $this->basePath() ?>/atractivo/lista">(Volver Atrás)</a></small></h2>
+	</div>
+</div>
+<div class="row bg-22 centrar cajota">
+	<div class="medium-12 columns">
+		<strong>Descripción del atractivo:</strong>
+	</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns">
+		<div class="panel callout radius">
+			<?php echo $atractivos->descripcion ?>
+		</div>
+	</div>
+</div>
+
+

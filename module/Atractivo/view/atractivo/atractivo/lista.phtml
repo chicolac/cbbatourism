@@ -1,0 +1,45 @@
+<?php
+// module/Atractivo/view/atractivo/atractivo/index.phtml:
+
+$title = 'My atractivos';
+
+//echo $this->topbar;
+
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+	<a href="<?php echo $this->url('atractivo', array('action'=>'nuevoat'));?>">Add new atractivo</a>
+</p>
+
+<table class="table">
+	<tr>
+		<th>Nombre del atractivo</th>
+		<th>Descripción</th>
+		<th>Fotos</th>
+		<th>Coordenadas</th>
+		<th>Dirección de la imagen</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+	</tr>
+	<?php foreach ($atractivos as $atractivo) : ?>
+	<tr>
+		<td><?php echo $this->escapeHtml($atractivo->nombre_at);?></td>
+		<td><?php echo $this->escapeHtml($atractivo->descripcion);?></td>
+		<td><?php echo $this->escapeHtml($atractivo->fotos);?></td>
+		<td><?php echo $this->escapeHtml($atractivo->coordenadas);?></td>
+		<td><?php echo $this->escapeHtml($atractivo->direc_foto);?></td>
+		<td>
+			<a href="<?php echo $this->url('atractivo',
+			array('action'=>'edit', 'id' => $atractivo->cod_at));?>">Edit</a>
+			<a href="<?php echo $this->url('atractivo',
+			array('action'=>'delete', 'id' => $atractivo->cod_at));?>">Delete</a>
+		</td>
+		<td>
+			<a href="<?php echo $this->url('atractivo',
+			array('action'=>'atractivo', 'id' => $atractivo->cod_at));?>">Ver</a>
+			<!--<a href="<?php echo $this->basePath() ?>/atractivo/ver/<?php echo $atractivo->cod_at ?>">ver</a>-->
+		</td>
+	</tr>
+	<?php endforeach; ?>
+</table>

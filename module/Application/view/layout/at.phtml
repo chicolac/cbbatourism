@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sitio Turismo Universidad Mayor de San Simón</title>
+
+		<?php include("biblioteca.phtml") ?>
+		<?php estilo() ?>
+
+	</head>
+	<body class="bg-17" onload="inicio()">
+
+		<!--
+		small = mobile
+		medium = tablets
+		large = desktop
+		-->
+
+		<!-- La navegación -->
+		<?php menuOption() ?>
+		
+		<!-- los indicadores -->
+		<?php dondeEstoy() ?>
+
+
+		<!-- cuando me muestres contenido -->
+
+		<div class="row">			
+			<div class="medium-12 columns bg-15">
+
+				<!--
+				dl = definition list
+				dt = definition term
+				dd = definition data
+				-->
+				
+				<nav>
+
+					<!-- el menú vertical del contenido -->
+					<?php menuVertical() ?>
+
+				</nav>
+
+				<!-- nuestro contenido vertical -->
+				<?php contenidoVertical() ?>
+
+				<!-- cargamos el pop-up -->
+				<?php detallando() ?>
+				
+			</div>
+		</div>
+
+		<!-- El SUPER CONTENIDO :) -->		
+		<div class="content">
+			<h1>Saludo : <?php echo $this->saludo ?> </h1>
+
+			<?php echo $this->content?>
+		</div>
+
+		<!-- El pie de mi página :) -->
+		<?php piePage() ?>
+
+		<script>
+			var a = 5;
+			//$(document).foundation();
+			$(document).foundation({
+				topbar : {
+					custom_back_text: false,
+					is_hover: true,
+					mobile_show_parent_link: false
+				}
+			});
+		</script>
+
+	</body>
+</html>

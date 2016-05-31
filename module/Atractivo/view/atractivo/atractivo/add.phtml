@@ -1,0 +1,49 @@
+<?php
+// module/Atractivo/view/atractivo/atractivo/add.phtml:
+
+$title = 'Add new atractivo';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form->setAttribute('action', $this->url('atractivo', array('action' => 'add')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+
+//echo $this->formHidden($form->get('cod_at'));
+?>
+<!--
+<div class="form_element">
+	<?php
+		echo $this->formRow($form->get('nombre_at'));
+	?>
+</div>
+<div class="form_element">
+	<?php
+		echo $this->formRow($form->get('descripcion'));
+	?>
+</div>
+<div class="form_element">
+	<?php
+		echo $this->formRow($form->get('fotos'));
+	?>
+</div>
+<div class="form_element">
+	<?php
+		echo $this->formRow($form->get('coordenadas'));
+	?>
+</div>
+<div class="form_element">
+	<?php
+		echo $this->formRow($form->get('direc_foto'));
+	?>
+</div>
+-->
+<?php
+
+//echo $this->formSubmit($form->get('submit'));
+
+echo $this->formCollection($form);
+
+echo $this->form()->closeTag();

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>un diseño simple</title>
+
+		<?php echo $this->cabecera ?>
+
+	</head>
+	<body onload="inicio()">
+		<!--
+		small = mobile
+		medium = tablets
+		large = desktop
+		-->
+
+		<?php echo $this->content ?>
+
+		<!-- cargar foundation 
+		<?php echo $this->inlineScript()
+			->prependFile($this->basePath('js/cargarf.js'))
+		; ?>
+		-->
+
+		<script>
+			$(document).foundation('reflow');
+
+			$( document ).ready();
+		</script>
+
+		<!--
+<?php
+$this->inlineScript()->captureStart();
+echo <<<JS
+	$(document).foundation('reflow');
+	$( document ).ready();
+JS;
+$this->inlineScript()->captureEnd();
+?>
+		-->
+
+	</body>
+</html>

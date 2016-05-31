@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<!--
+		 This is how you would link your custom stylesheet 
+		<link rel="stylesheet" href="css/app.css">
+		-->
+		
+		<?php echo $this->cabecera ?>
+
+	</head>
+	<body>
+
+		<!--
+		small = mobile
+		medium = tablets
+		large = desktop
+		-->
+		
+		<!--
+		dl = definition list
+		dt = definition term
+		dd = definition data
+		-->
+
+		<?php echo $this->topbar ?>
+
+		<div class="row">
+			<div class="medium-12 columns">
+				<!-- El SUPER CONTENIDO :) -->
+				<div class="content">
+					<h1>Saludo : <?php echo $this->saludo ?> </h1>
+
+					<?php echo $this->content ?>
+
+				</div>
+			</div>
+		</div>
+
+		<?php echo $this->pie ?>
+
+		<script>
+			//$(document).foundation();
+			$(document).foundation({
+				topbar : {
+					custom_back_text: false,
+					is_hover: true,
+					mobile_show_parent_link: false
+				}
+			});
+		</script>
+
+	</body>
+</html>
